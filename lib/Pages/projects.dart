@@ -11,7 +11,15 @@ class Projects extends StatelessWidget {
     final Controller controller = Get.find<Controller>();
     final Links linkController = Get.find<Links>();
     return Scaffold(
-      appBar: AppBar(title: Text('Projects'), centerTitle: true, elevation: 0),
+      appBar: AppBar(
+        title: Text('Projects'),
+        centerTitle: true,
+        elevation: 0,
+        scrolledUnderElevation: 0,
+        backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
+        titleTextStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Obx(() {

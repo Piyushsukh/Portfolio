@@ -65,8 +65,10 @@ flutter:
   assets:
     - assets/image/profile.jpg
     - assets/image/projects_images/sahaay.jpg
-    - assets/image/projects_images/weather.jpg
+    - assets/image/projects_images/weather.jpeg
     - assets/image/projects_images/currency.jpg
+    - assets/image/projects_images/book.jpeg
+    - assets/image/projects_images/shop.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
