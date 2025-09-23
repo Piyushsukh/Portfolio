@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/Classes/contactMe.dart';
+import 'package:portfolio/Classes/links.dart';
 
 class ContactMe extends StatelessWidget {
   const ContactMe({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final SocialMediaIcon iconController = Get.put(SocialMediaIcon());
+    final SocialMediaController socialMediaController = Get.put(
+      SocialMediaController(),
+    );
     final ContactController contactController = Get.put(ContactController());
+    final linkController = Get.find<Links>();
     return Scaffold(
       appBar: AppBar(
         title: const Text("Contact Me"),
@@ -42,10 +46,23 @@ class ContactMe extends StatelessWidget {
                 child: Obx(() {
                   return ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: iconController.icon.length,
+                    itemCount: socialMediaController.social.length,
                     itemBuilder: (context, index) {
                       return GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          if (socialMediaController.social[index].name ==
+                              'Gmail') {
+                            linkController.gmailRedirect(
+                              path: socialMediaController.social[index].url,
+                              subject: '',
+                              body: '',
+                            );
+                          } else {
+                            linkController.linkRedirect(
+                              link: socialMediaController.social[index].url,
+                            );
+                          }
+                        },
                         child: Container(
                           padding: EdgeInsets.all(8),
                           margin: EdgeInsets.symmetric(horizontal: 8),
@@ -53,7 +70,11 @@ class ContactMe extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                             color: Colors.grey[900],
                           ),
-                          child: Icon(iconController.icon[index]),
+                          child: Icon(
+                            socialMediaController.social[index].icon,
+                            size: 24,
+                            color: Colors.white,
+                          ),
                         ),
                       );
                     },
@@ -126,7 +147,6 @@ class ContactMe extends StatelessWidget {
               ),
               SizedBox(height: 20),
 
-              // Message Field
               Obx(
                 () => Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -162,13 +182,7 @@ class ContactMe extends StatelessWidget {
 
               TextButton(
                 onPressed: () {
-                  if (contactController.validate()) {
-                    Get.snackbar(
-                      'Success',
-                      'Message sent successfully!',
-                      snackPosition: SnackPosition.BOTTOM,
-                    );
-                  }
+                  if (contactController.validate()) {}
                 },
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.blue,

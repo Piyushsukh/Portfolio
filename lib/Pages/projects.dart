@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:portfolio/Classes/links.dart';
 import 'package:portfolio/Pages/home_screen.dart';
 
 class Projects extends StatelessWidget {
@@ -8,6 +9,7 @@ class Projects extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Controller controller = Get.find<Controller>();
+    final Links linkController = Get.find<Links>();
     return Scaffold(
       appBar: AppBar(title: Text('Projects'), centerTitle: true, elevation: 0),
       body: Padding(
@@ -48,7 +50,7 @@ class Projects extends StatelessWidget {
                       SizedBox(height: 10),
                       TextButton(
                         onPressed: () {
-                          Get.snackbar('Link', project.link);
+                          linkController.linkRedirect(link: project.link);
                         },
                         style: TextButton.styleFrom(
                           backgroundColor: Colors.blue,

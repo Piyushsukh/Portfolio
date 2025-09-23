@@ -25,20 +25,20 @@ class Controller extends GetxController {
       description:
           'Sahaay connects students with qualified counselors for smart and accessible support',
       imageUrl: 'assets/image/projects_images/sahaay.jpg',
-      link: 'https://github.com/yourusername/sahaay',
+      link: 'https://github.com/PiyushSukh/sahaay',
     ),
     Projects(
       title: 'Weatherly',
       description:
           'Weatherly shows real-time weather updates quickly and easily.',
       imageUrl: 'assets/image/projects_images/weather.jpg',
-      link: 'https://github.com/yourusername/weatherly',
+      link: 'https://github.com/PiyushSukh/weatherly',
     ),
     Projects(
       title: 'Currency Converter',
       description: 'Convert USD to INR currency easily and quickly.',
       imageUrl: 'assets/image/projects_images/currency.jpg',
-      link: 'https://github.com/yourusername/currency_converter',
+      link: 'https://github.com/PiyushSukh/currency_converter',
     ),
   ].obs;
 }
