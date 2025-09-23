@@ -53,7 +53,7 @@ class SocialMediaController extends GetxController {
 class ContactController extends GetxController {
   // Text controllers
   var nameController = TextEditingController();
-  var emailController = TextEditingController();
+  var subjectController = TextEditingController();
   var messageController = TextEditingController();
 
   // Error messages

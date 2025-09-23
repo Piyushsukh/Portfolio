@@ -120,12 +120,12 @@ class ContactMe extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     TextField(
-                      controller: contactController.emailController,
+                      controller: contactController.subjectController,
                       cursorColor: Colors.white,
                       decoration: InputDecoration(
                         fillColor: Colors.grey[800],
                         filled: true,
-                        hintText: 'Email',
+                        hintText: 'Subject',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -137,9 +137,9 @@ class ContactMe extends StatelessWidget {
                         ),
                       ),
                     ),
-                    if (contactController.emailError.value.isNotEmpty)
+                    if (contactController.subjectError.value.isNotEmpty)
                       Text(
-                        contactController.emailError.value,
+                        contactController.subjectError.value,
                         style: TextStyle(color: Colors.red, fontSize: 12),
                       ),
                   ],
@@ -182,7 +182,13 @@ class ContactMe extends StatelessWidget {
 
               TextButton(
                 onPressed: () {
-                  if (contactController.validate()) {}
+                  if (contactController.validate()) {
+                    linkController.gmailRedirect(
+                      path: socialMediaController.social[0].url,
+                      subject: contactController.subjectController.text.trim(),
+                      body: contactController.messageController.text.trim(),
+                    );
+                  }
                 },
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.blue,
