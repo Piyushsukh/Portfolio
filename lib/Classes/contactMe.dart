@@ -30,7 +30,7 @@ class SocialMediaController extends GetxController {
     SocialMedia(
       name: 'Gmail',
       icon: SimpleIcons.gmail,
-      url: 'piyush25@gmail.com',
+      url: 'piyushjaipur25@gmail.com',
     ),
     SocialMedia(
       name: 'Twitter',
@@ -40,12 +40,12 @@ class SocialMediaController extends GetxController {
     SocialMedia(
       name: 'Instagram',
       icon: FontAwesomeIcons.instagram,
-      url: 'https://www.instagram.com/piyushsukhwal/',
+      url: 'https://www.instagram.com/_piyushsukhwani_/',
     ),
     SocialMedia(
       name: 'Facebook',
       icon: FontAwesomeIcons.facebook,
-      url: 'https://www.facebook.com/piyushsukhwal',
+      url: 'https://www.facebook.com/piyush.sukhwani.39',
     ),
   ].obs;
 }

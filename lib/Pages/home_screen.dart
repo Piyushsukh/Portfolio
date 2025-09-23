@@ -23,7 +23,7 @@ class Controller extends GetxController {
     Projects(
       title: 'Sahaay',
       smallDescription:
-          'Sahaay is a mental health app that connects users with professional counselors and an AI counselor for instant, supportive guidance.',
+          'Sahaay is a mental health app that connects users with professional counselors and an AI counselor.',
       description:
           'Sahaay is a mental health support app that connects users with professional counselors and also offers an AI-powered counselor for instant guidance. Users can chat securely to share their concerns, receive personalized suggestions, and track their emotional well-being. The AI counselor provides quick responses for stress management and self-reflection, while human counselors ensure deeper support when needed. With its simple interface and safe environment, Sahaay makes counseling more accessible and reliable anytime, anywhere.',
       imageUrl: 'assets/image/projects_images/sahaay.jpg',
@@ -34,7 +34,7 @@ class Controller extends GetxController {
       smallDescription:
           'Browse, discover, and purchase your favorite books in a few taps.',
       description:
-          'A Book Shop App that provides a platform for users to buy and sell books.',
+          'My Book Shop is a user-friendly app that lets users browse, search, and purchase books effortlessly. Users can explore books by category, view detailed descriptions, and add them to a shopping cart for easy checkout. Users can also add their own books to the platform to share or sell. Its goal is to make buying, discovering, and sharing books simple, convenient, and enjoyable for everyone.',
       imageUrl: 'assets/image/projects_images/book.jpeg',
       link: 'https://github.com/PiyushSukh/book_shop',
     ),
@@ -172,7 +172,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 10),
                 SizedBox(
-                  height: 120,
+                  height: 125,
                   child: Obx(() {
                     return ListView.builder(
                       scrollDirection: Axis.horizontal,
@@ -210,7 +210,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 10),
                 SizedBox(
-                  height: 300,
+                  height: 320,
                   child: SizedBox(
                     child: Obx(() {
                       return ListView.builder(
@@ -261,7 +261,7 @@ class HomeScreen extends StatelessWidget {
                                             .smallDescription,
                                         textAlign: TextAlign.center,
                                         softWrap: true,
-                                        maxLines: 4,
+                                        maxLines: 6,
                                         overflow: TextOverflow.ellipsis,
                                         style: TextStyle(fontSize: 12),
                                       ),

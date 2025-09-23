@@ -53,7 +53,7 @@ class ContactMe extends StatelessWidget {
                           if (socialMediaController.social[index].name ==
                               'Gmail') {
                             linkController.gmailRedirect(
-                              path: socialMediaController.social[index].url,
+                              path: 'piyushjaipur25@gmail.com',
                               subject: '',
                               body: '',
                             );
@@ -184,7 +184,7 @@ class ContactMe extends StatelessWidget {
                 onPressed: () {
                   if (contactController.validate()) {
                     linkController.gmailRedirect(
-                      path: socialMediaController.social[0].url,
+                      path: socialMediaController.social[2].url,
                       subject: contactController.subjectController.text.trim(),
                       body: contactController.messageController.text.trim(),
                     );
