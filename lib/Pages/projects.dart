@@ -1,0 +1,69 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:portfolio/Pages/home_screen.dart';
+
+class Projects extends StatelessWidget {
+  const Projects({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final Controller controller = Get.find<Controller>();
+    return Scaffold(
+      appBar: AppBar(title: Text('Projects'), centerTitle: true, elevation: 0),
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Obx(() {
+          return ListView.builder(
+            itemCount: controller.projects.length,
+            itemBuilder: (context, index) {
+              final project = controller.projects[index];
+              return Card(
+                color: Colors.grey[800],
+                margin: EdgeInsets.symmetric(vertical: 8),
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Image.asset(
+                        project.imageUrl,
+                        height: 200,
+                        width: double.infinity,
+                        fit: BoxFit.contain,
+                      ),
+                      SizedBox(height: 8),
+                      Text(
+                        project.title,
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      Text(
+                        project.description,
+                        style: TextStyle(color: Colors.white70),
+                      ),
+                      SizedBox(height: 10),
+                      TextButton(
+                        onPressed: () {
+                          Get.snackbar('Link', project.link);
+                        },
+                        style: TextButton.styleFrom(
+                          backgroundColor: Colors.blue,
+                          foregroundColor: Colors.white,
+                        ),
+                        child: Text('View Project'),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
+          );
+        }),
+      ),
+    );
+  }
+}
