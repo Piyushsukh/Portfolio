@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:portfolio/Classes/links.dart';
 import 'package:portfolio/Classes/projects.dart';
 import 'package:simple_icons/simple_icons.dart';
 import '../Classes/skills.dart';
@@ -48,6 +49,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(Controller());
+    final linkController = Get.put(Links());
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -252,22 +254,36 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     IconButton(
                       icon: Icon(FontAwesomeIcons.github),
-                      onPressed: () {},
+                      onPressed: () {
+                        linkController.linkRedirect(
+                          link: 'https://github.com/PiyushSukh',
+                        );
+                      },
                     ),
                     IconButton(
                       icon: Icon(FontAwesomeIcons.linkedin),
-                      onPressed: () {},
+                      onPressed: () {
+                        linkController.linkRedirect(
+                          link: 'https://www.linkedin.com/in/piyush-sukhwani/',
+                        );
+                      },
                     ),
                     IconButton(
                       icon: Icon(FontAwesomeIcons.twitter),
                       onPressed: () {
-                        // Handle Twitter link
+                        linkController.linkRedirect(
+                          link: 'https://x.com/SukhwaniPi3583',
+                        );
                       },
                     ),
                     IconButton(
                       icon: Icon(FontAwesomeIcons.envelope),
                       onPressed: () {
-                        // Handle Email link
+                        linkController.gmailRedirect(
+                          path: 'piyushjaipur25@gmail.com',
+                          subject: '',
+                          body: '',
+                        );
                       },
                     ),
                   ],

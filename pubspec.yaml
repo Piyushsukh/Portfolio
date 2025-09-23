@@ -37,6 +37,7 @@ dependencies:
   get: ^4.7.2
   font_awesome_flutter: ^10.10.0
   simple_icons: ^14.6.1
+  url_launcher: ^6.3.2
 
 dev_dependencies:
   flutter_test:
