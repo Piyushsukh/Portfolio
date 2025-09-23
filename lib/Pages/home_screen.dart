@@ -192,7 +192,6 @@ class HomeScreen extends StatelessWidget {
                         itemBuilder: (context, index) {
                           return Padding(
                             padding: const EdgeInsets.symmetric(vertical: 4.0),
-
                             child: SizedBox(
                               width: 170,
                               child: Card(
@@ -201,27 +200,30 @@ class HomeScreen extends StatelessWidget {
                                   padding: const EdgeInsets.all(16.0),
                                   child: Column(
                                     children: [
-                                      Container(
-                                        height: 140,
-                                        width: 100,
-                                        padding: EdgeInsets.all(10),
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(
-                                            8,
-                                          ),
-                                          image: DecorationImage(
-                                            image: AssetImage(
-                                              controller
-                                                  .projects[index]
-                                                  .imageUrl,
+                                      Center(
+                                        child: Container(
+                                          height: 140,
+                                          width: 100,
+                                          padding: EdgeInsets.all(10),
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(
+                                              8,
                                             ),
-                                            fit: BoxFit.fill,
+                                            image: DecorationImage(
+                                              image: AssetImage(
+                                                controller
+                                                    .projects[index]
+                                                    .imageUrl,
+                                              ),
+                                              fit: BoxFit.fill,
+                                            ),
                                           ),
                                         ),
                                       ),
                                       SizedBox(height: 10),
                                       Text(
                                         controller.projects[index].title,
+                                        textAlign: TextAlign.center,
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                         ),

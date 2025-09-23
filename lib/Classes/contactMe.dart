@@ -58,13 +58,9 @@ class ContactController extends GetxController {
 
   // Error messages
   var nameError = ''.obs;
-  var emailError = ''.obs;
+  var subjectError = ''.obs;
   var messageError = ''.obs;
 
-  // Simple email regex
-  final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
-
-  // Validation function
   bool validate() {
     bool isValid = true;
 
@@ -75,14 +71,11 @@ class ContactController extends GetxController {
       nameError.value = '';
     }
 
-    if (emailController.text.trim().isEmpty) {
-      emailError.value = 'Email cannot be empty';
-      isValid = false;
-    } else if (!emailRegex.hasMatch(emailController.text.trim())) {
-      emailError.value = 'Enter a valid email';
+    if (subjectController.text.trim().isEmpty) {
+      subjectError.value = 'Subject cannot be empty';
       isValid = false;
     } else {
-      emailError.value = '';
+      subjectError.value = '';
     }
 
     if (messageController.text.trim().isEmpty) {
