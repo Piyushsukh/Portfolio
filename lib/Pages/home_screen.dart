@@ -72,6 +72,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     final controller = Get.put(Controller());
     final linkController = Get.put(Links());
     return Scaffold(
@@ -86,9 +87,36 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(height: 10),
                 Row(
                   children: [
-                    CircleAvatar(
-                      radius: 50,
-                      backgroundImage: AssetImage('assets/image/profile.jpg'),
+                    GestureDetector(
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            return Dialog(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(300),
+                              ),
+                              backgroundColor: Colors.transparent,
+                              insetPadding: EdgeInsets.all(120),
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).pop();
+                                },
+                                child: ClipOval(
+                                  child: Image.asset(
+                                    'assets/image/profile.jpg',
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                      child: CircleAvatar(
+                        radius: 50,
+                        backgroundImage: AssetImage('assets/image/profile.jpg'),
+                      ),
                     ),
                     SizedBox(width: 20),
                     Expanded(
