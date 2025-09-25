@@ -12,13 +12,16 @@ class Projects extends StatelessWidget {
     final Links linkController = Get.find<Links>();
     return Scaffold(
       appBar: AppBar(
-        title: Text('Projects'),
+        title: const Text('Projects'),
         centerTitle: true,
         elevation: 0,
         scrolledUnderElevation: 0,
         backgroundColor: Colors.transparent,
         surfaceTintColor: Colors.transparent,
-        titleTextStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+        titleTextStyle: const TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 24,
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -29,7 +32,7 @@ class Projects extends StatelessWidget {
               final project = controller.projects[index];
               return Card(
                 color: Colors.grey[800],
-                margin: EdgeInsets.symmetric(vertical: 8),
+                margin: const EdgeInsets.symmetric(vertical: 8),
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Column(
@@ -41,21 +44,21 @@ class Projects extends StatelessWidget {
                         width: double.infinity,
                         fit: BoxFit.contain,
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       Text(
                         project.title,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),
                       ),
-                      SizedBox(height: 5),
+                      const SizedBox(height: 5),
                       Text(
                         project.description,
-                        style: TextStyle(color: Colors.white70),
+                        style: const TextStyle(color: Colors.white70),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       TextButton(
                         onPressed: () {
                           linkController.linkRedirect(link: project.link);
@@ -64,7 +67,7 @@ class Projects extends StatelessWidget {
                           backgroundColor: Colors.blue,
                           foregroundColor: Colors.white,
                         ),
-                        child: Text('View Project'),
+                        child: const Text('View Project'),
                       ),
                     ],
                   ),

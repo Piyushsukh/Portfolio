@@ -6,7 +6,7 @@ import 'package:portfolio/Pages/home_screen.dart';
 import 'package:portfolio/Pages/projects.dart';
 
 class IndexController extends GetxController {
-  var selectedIndex = 0.obs;
+  final selectedIndex = 0.obs;
   void changeIndex(int index) {
     selectedIndex.value = index;
   }
@@ -19,7 +19,7 @@ class FrontPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    IndexController indexController = Get.put(IndexController());
+    final indexController = Get.put(IndexController());
     return Scaffold(
       body: Obx(
         () => IndexedStack(
@@ -38,19 +38,19 @@ class FrontPage extends StatelessWidget {
                 text: 'Home',
                 index: 0,
                 indexController: indexController,
-                icon: Icon(FontAwesomeIcons.house),
+                icon: const Icon(FontAwesomeIcons.house),
               ),
               _buildNavBar(
                 text: 'Projects',
                 index: 1,
                 indexController: indexController,
-                icon: Icon(FontAwesomeIcons.laptopCode),
+                icon: const Icon(FontAwesomeIcons.laptopCode),
               ),
               _buildNavBar(
                 text: 'Contact Me',
                 index: 2,
                 indexController: indexController,
-                icon: Icon(FontAwesomeIcons.phone),
+                icon: const Icon(FontAwesomeIcons.phone),
               ),
             ],
           ),

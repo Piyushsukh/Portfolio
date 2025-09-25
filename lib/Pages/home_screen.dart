@@ -92,7 +92,9 @@ class HomeScreen extends StatelessWidget {
                           context: context,
                           builder: (context) {
                             return InteractiveViewer(
-                              maxScale: 1.5,
+                              maxScale: 1.4,
+                              minScale: 1,
+                              panAxis: PanAxis.vertical,
                               panEnabled: false,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20),

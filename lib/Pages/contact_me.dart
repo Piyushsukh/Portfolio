@@ -8,11 +8,10 @@ class ContactMe extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final SocialMediaController socialMediaController = Get.put(
-      SocialMediaController(),
-    );
-    final ContactController contactController = Get.put(ContactController());
+    final socialMediaController = Get.put(SocialMediaController());
+    final contactController = Get.put(ContactController());
     final linkController = Get.find<Links>();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Contact Me"),
@@ -21,7 +20,7 @@ class ContactMe extends StatelessWidget {
         centerTitle: true,
         elevation: 0,
         scrolledUnderElevation: 0,
-        titleTextStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+        titleTextStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
       ),
       body: Padding(
         padding: const EdgeInsets.all(18.0),
@@ -29,18 +28,18 @@ class ContactMe extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(
+              const Center(
                 child: CircleAvatar(
                   radius: 80,
                   backgroundImage: AssetImage("assets/image/profile.jpg"),
                 ),
               ),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 'Get in Touch',
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               SizedBox(
                 height: 40,
                 child: Obx(() {
@@ -50,8 +49,7 @@ class ContactMe extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return GestureDetector(
                         onTap: () {
-                          if (socialMediaController.social[index].name ==
-                              'Gmail') {
+                          if (socialMediaController.social[index].name == 'Gmail') {
                             linkController.gmailRedirect(
                               path: 'piyushjaipur25@gmail.com',
                               subject: '',
@@ -64,8 +62,8 @@ class ContactMe extends StatelessWidget {
                           }
                         },
                         child: Container(
-                          padding: EdgeInsets.all(8),
-                          margin: EdgeInsets.symmetric(horizontal: 8),
+                          padding: const EdgeInsets.all(8),
+                          margin: const EdgeInsets.symmetric(horizontal: 8),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             color: Colors.grey[900],
@@ -81,8 +79,7 @@ class ContactMe extends StatelessWidget {
                   );
                 }),
               ),
-              SizedBox(height: 30),
-
+              const SizedBox(height: 30),
               Obx(
                 () => Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -108,13 +105,12 @@ class ContactMe extends StatelessWidget {
                     if (contactController.nameError.value.isNotEmpty)
                       Text(
                         contactController.nameError.value,
-                        style: TextStyle(color: Colors.red, fontSize: 12),
+                        style: const TextStyle(color: Colors.red, fontSize: 12),
                       ),
                   ],
                 ),
               ),
-              SizedBox(height: 20),
-
+              const SizedBox(height: 20),
               Obx(
                 () => Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -140,13 +136,12 @@ class ContactMe extends StatelessWidget {
                     if (contactController.subjectError.value.isNotEmpty)
                       Text(
                         contactController.subjectError.value,
-                        style: TextStyle(color: Colors.red, fontSize: 12),
+                        style: const TextStyle(color: Colors.red, fontSize: 12),
                       ),
                   ],
                 ),
               ),
-              SizedBox(height: 20),
-
+              const SizedBox(height: 20),
               Obx(
                 () => Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -173,13 +168,12 @@ class ContactMe extends StatelessWidget {
                     if (contactController.messageError.value.isNotEmpty)
                       Text(
                         contactController.messageError.value,
-                        style: TextStyle(color: Colors.red, fontSize: 12),
+                        style: const TextStyle(color: Colors.red, fontSize: 12),
                       ),
                   ],
                 ),
               ),
-              SizedBox(height: 30),
-
+              const SizedBox(height: 30),
               TextButton(
                 onPressed: () {
                   if (contactController.validate()) {
@@ -196,11 +190,11 @@ class ContactMe extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50),
                   ),
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  textStyle: TextStyle(fontSize: 16),
-                  minimumSize: Size(double.infinity, 50),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  textStyle: const TextStyle(fontSize: 16),
+                  minimumSize: const Size(double.infinity, 50),
                 ),
-                child: Text('Send Message'),
+                child: const Text('Send Message'),
               ),
             ],
           ),
