@@ -93,17 +93,22 @@ class HomeScreen extends StatelessWidget {
                           context: context,
                           builder: (context) {
                             return InteractiveViewer(
-                              child: Dialog(
-                                backgroundColor: Colors.transparent,
-                                insetPadding: EdgeInsets.all(50),
-                                child: GestureDetector(
-                                  onTap: () {
-                                    Navigator.of(context).pop();
-                                  },
-                                  child: ClipOval(
-                                    child: Image.asset(
-                                      'assets/image/profile.jpg',
-                                      fit: BoxFit.cover,
+                              maxScale: 1.5,
+                              panEnabled: false,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Dialog(
+                                  backgroundColor: Colors.transparent,
+                                  insetPadding: EdgeInsets.all(50),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: ClipOval(
+                                      child: Image.asset(
+                                        'assets/image/profile.jpg',
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 ),
