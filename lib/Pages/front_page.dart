@@ -34,74 +34,57 @@ class FrontPage extends StatelessWidget {
           () => Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Column(
-                children: [
-                  IconButton(
-                    icon: const FaIcon(FontAwesomeIcons.house),
-                    color: indexController.selectedIndex.value == 0
-                        ? Colors.white
-                        : Colors.grey,
-                    onPressed: () {
-                      indexController.changeIndex(0);
-                    },
-                  ),
-                  Text(
-                    "Home",
-                    style: TextStyle(
-                      color: indexController.selectedIndex.value == 0
-                          ? Colors.white
-                          : Colors.grey,
-                    ),
-                  ),
-                ],
+              _buildNavBar(
+                text: 'Home',
+                index: 0,
+                indexController: indexController,
+                icon: Icon(FontAwesomeIcons.house),
               ),
-
-              Column(
-                children: [
-                  IconButton(
-                    icon: const FaIcon(FontAwesomeIcons.laptopCode),
-                    color: indexController.selectedIndex.value == 1
-                        ? Colors.white
-                        : Colors.grey,
-                    onPressed: () {
-                      indexController.changeIndex(1);
-                    },
-                  ),
-                  Text(
-                    "Projects",
-                    style: TextStyle(
-                      color: indexController.selectedIndex.value == 1
-                          ? Colors.white
-                          : Colors.grey,
-                    ),
-                  ),
-                ],
+              _buildNavBar(
+                text: 'Projects',
+                index: 1,
+                indexController: indexController,
+                icon: Icon(FontAwesomeIcons.laptopCode),
               ),
-              Column(
-                children: [
-                  IconButton(
-                    icon: const Icon(FontAwesomeIcons.phone),
-                    color: indexController.selectedIndex.value == 2
-                        ? Colors.white
-                        : Colors.grey,
-                    onPressed: () {
-                      indexController.changeIndex(2);
-                    },
-                  ),
-                  Text(
-                    "Contact Me",
-                    style: TextStyle(
-                      color: indexController.selectedIndex.value == 2
-                          ? Colors.white
-                          : Colors.grey,
-                    ),
-                  ),
-                ],
+              _buildNavBar(
+                text: 'Contact Me',
+                index: 2,
+                indexController: indexController,
+                icon: Icon(FontAwesomeIcons.phone),
               ),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildNavBar({
+    required String text,
+    required int index,
+    required IndexController indexController,
+    required Icon icon,
+  }) {
+    return Column(
+      children: [
+        IconButton(
+          icon: icon,
+          color: indexController.selectedIndex.value == index
+              ? Colors.white
+              : Colors.grey,
+          onPressed: () {
+            indexController.changeIndex(index);
+          },
+        ),
+        Text(
+          text,
+          style: TextStyle(
+            color: indexController.selectedIndex.value == index
+                ? Colors.white
+                : Colors.grey,
+          ),
+        ),
+      ],
     );
   }
 }

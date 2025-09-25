@@ -8,16 +8,16 @@ import '../Classes/skills.dart';
 
 class Controller extends GetxController {
   final List<Skills> skills = [
-    Skills(skill: 'Flutter', icon: Icon(FontAwesomeIcons.flutter)),
-    Skills(skill: 'Dart', icon: Icon(FontAwesomeIcons.dartLang)),
-    Skills(skill: 'Django', icon: Icon(SimpleIcons.django)),
-    Skills(skill: 'GetX', icon: Icon(FontAwesomeIcons.x)),
-    Skills(skill: 'Firebase', icon: Icon(SimpleIcons.firebase)),
-    Skills(skill: 'Python', icon: Icon(FontAwesomeIcons.python)),
-    Skills(skill: 'RestApis', icon: Icon(SimpleIcons.swagger)),
-    Skills(skill: 'Java', icon: Icon(FontAwesomeIcons.java)),
-    Skills(skill: 'Git', icon: Icon(FontAwesomeIcons.git)),
-    Skills(skill: 'Unity', icon: Icon(FontAwesomeIcons.unity)),
+    Skills(skill: 'Flutter', icon: const Icon(FontAwesomeIcons.flutter)),
+    Skills(skill: 'Dart', icon: const Icon(FontAwesomeIcons.dartLang)),
+    Skills(skill: 'Django', icon: const Icon(SimpleIcons.django)),
+    Skills(skill: 'GetX', icon: const Icon(FontAwesomeIcons.x)),
+    Skills(skill: 'Firebase', icon: const Icon(SimpleIcons.firebase)),
+    Skills(skill: 'Python', icon: const Icon(FontAwesomeIcons.python)),
+    Skills(skill: 'RestApis', icon: const Icon(SimpleIcons.swagger)),
+    Skills(skill: 'Java', icon: const Icon(FontAwesomeIcons.java)),
+    Skills(skill: 'Git', icon: const Icon(FontAwesomeIcons.git)),
+    Skills(skill: 'Unity', icon: const Icon(FontAwesomeIcons.unity)),
   ].obs;
 
   final List<Projects> projects = [
@@ -82,9 +82,8 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.all(20.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-
               children: [
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Row(
                   children: [
                     GestureDetector(
@@ -99,7 +98,7 @@ class HomeScreen extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(20),
                                 child: Dialog(
                                   backgroundColor: Colors.transparent,
-                                  insetPadding: EdgeInsets.all(50),
+                                  insetPadding: const EdgeInsets.all(50),
                                   child: GestureDetector(
                                     onTap: () {
                                       Navigator.of(context).pop();
@@ -117,13 +116,13 @@ class HomeScreen extends StatelessWidget {
                           },
                         );
                       },
-                      child: CircleAvatar(
+                      child: const CircleAvatar(
                         radius: 50,
                         backgroundImage: AssetImage('assets/image/profile.jpg'),
                       ),
                     ),
-                    SizedBox(width: 20),
-                    Expanded(
+                    const SizedBox(width: 20),
+                    const Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -141,7 +140,6 @@ class HomeScreen extends StatelessWidget {
                             style: TextStyle(
                               color: Colors.grey,
                               fontSize: 13,
-
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -150,15 +148,15 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 30),
-                Text(
+                const SizedBox(height: 30),
+                const Text(
                   'About Me',
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Row(
                   children: [
-                    Expanded(
+                    const Expanded(
                       child: Text(
                         'I’m Piyush Sukhwani, a passionate Mobile App Developer with experience in building modern, user-friendly applications using Flutter for the front end and Django for the back end. I enjoy creating clean, efficient, and scalable solutions that make an impact. With a strong interest in learning new technologies and improving my skills, I love turning ideas into real-world applications. Beyond coding, I enjoy exploring creative projects, collaborating with others, and continuously challenging myself to grow as a developer',
                         style: TextStyle(fontSize: 16, height: 1.5),
@@ -172,11 +170,11 @@ class HomeScreen extends StatelessWidget {
                         Get.dialog(
                           barrierDismissible: false,
                           AlertDialog(
-                            title: Text(
+                            title: const Text(
                               'About Me',
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
-                            content: SingleChildScrollView(
+                            content: const SingleChildScrollView(
                               child: Text(
                                 "I’m Piyush Sukhwani, a passionate Mobile App Developer with experience in building modern, user-friendly applications using Flutter for the front end and Django for the back end. I enjoy creating clean, efficient, and scalable solutions that make an impact. With a strong interest in learning new technologies and improving my skills, I love turning ideas into real-world applications. Beyond coding, I enjoy exploring creative projects, collaborating with others, and continuously challenging myself to grow as a developer.",
                                 style: TextStyle(fontSize: 16, height: 1.5),
@@ -184,25 +182,23 @@ class HomeScreen extends StatelessWidget {
                             ),
                             actions: [
                               TextButton(
-                                onPressed: () {
-                                  Get.back();
-                                },
-                                child: Text('Close'),
+                                onPressed: Get.back,
+                                child: const Text('Close'),
                               ),
                             ],
                           ),
                         );
                       },
-                      child: Text('Read More'),
+                      child: const Text('Read More'),
                     ),
                   ],
                 ),
-                SizedBox(height: 30),
-                Text(
+                const SizedBox(height: 30),
+                const Text(
                   'Skills',
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 SizedBox(
                   height: 125,
                   child: Obx(() {
@@ -212,7 +208,6 @@ class HomeScreen extends StatelessWidget {
                       itemBuilder: (context, index) {
                         return Padding(
                           padding: const EdgeInsets.symmetric(vertical: 4.0),
-
                           child: SizedBox(
                             child: Card(
                               color: Colors.grey[700],
@@ -221,7 +216,7 @@ class HomeScreen extends StatelessWidget {
                                 child: Column(
                                   children: [
                                     Container(
-                                      padding: EdgeInsets.all(10),
+                                      padding: const EdgeInsets.all(10),
                                       child: controller.skills[index].icon,
                                     ),
                                     Text(controller.skills[index].skill),
@@ -235,12 +230,12 @@ class HomeScreen extends StatelessWidget {
                     );
                   }),
                 ),
-                SizedBox(height: 30),
-                Text(
+                const SizedBox(height: 30),
+                const Text(
                   'Projects',
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 SizedBox(
                   height: 320,
                   child: SizedBox(
@@ -263,7 +258,7 @@ class HomeScreen extends StatelessWidget {
                                         child: Container(
                                           height: 140,
                                           width: 100,
-                                          padding: EdgeInsets.all(10),
+                                          padding: const EdgeInsets.all(10),
                                           decoration: BoxDecoration(
                                             borderRadius: BorderRadius.circular(
                                               8,
@@ -279,11 +274,11 @@ class HomeScreen extends StatelessWidget {
                                           ),
                                         ),
                                       ),
-                                      SizedBox(height: 10),
+                                      const SizedBox(height: 10),
                                       Text(
                                         controller.projects[index].title,
                                         textAlign: TextAlign.center,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontWeight: FontWeight.bold,
                                         ),
                                       ),
@@ -295,7 +290,7 @@ class HomeScreen extends StatelessWidget {
                                         softWrap: true,
                                         maxLines: 6,
                                         overflow: TextOverflow.ellipsis,
-                                        style: TextStyle(fontSize: 12),
+                                        style: const TextStyle(fontSize: 12),
                                       ),
                                     ],
                                   ),
@@ -308,15 +303,15 @@ class HomeScreen extends StatelessWidget {
                     }),
                   ),
                 ),
-                SizedBox(height: 30),
-                Text(
+                const SizedBox(height: 30),
+                const Text(
                   'Contact ',
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 ),
                 Row(
                   children: [
                     IconButton(
-                      icon: Icon(FontAwesomeIcons.github),
+                      icon: const Icon(FontAwesomeIcons.github),
                       onPressed: () {
                         linkController.linkRedirect(
                           link: 'https://github.com/PiyushSukh',
@@ -324,7 +319,7 @@ class HomeScreen extends StatelessWidget {
                       },
                     ),
                     IconButton(
-                      icon: Icon(FontAwesomeIcons.linkedin),
+                      icon: const Icon(FontAwesomeIcons.linkedin),
                       onPressed: () {
                         linkController.linkRedirect(
                           link: 'https://www.linkedin.com/in/piyush-sukhwani/',
@@ -332,7 +327,7 @@ class HomeScreen extends StatelessWidget {
                       },
                     ),
                     IconButton(
-                      icon: Icon(FontAwesomeIcons.twitter),
+                      icon: const Icon(FontAwesomeIcons.twitter),
                       onPressed: () {
                         linkController.linkRedirect(
                           link: 'https://x.com/SukhwaniPi3583',
@@ -340,7 +335,7 @@ class HomeScreen extends StatelessWidget {
                       },
                     ),
                     IconButton(
-                      icon: Icon(FontAwesomeIcons.envelope),
+                      icon: const Icon(FontAwesomeIcons.envelope),
                       onPressed: () {
                         linkController.gmailRedirect(
                           path: 'piyushjaipur25@gmail.com',
