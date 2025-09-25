@@ -12,6 +12,7 @@ class Controller extends GetxController {
     Skills(skill: 'Dart', icon: Icon(FontAwesomeIcons.dartLang)),
     Skills(skill: 'Django', icon: Icon(SimpleIcons.django)),
     Skills(skill: 'GetX', icon: Icon(FontAwesomeIcons.x)),
+    Skills(skill: 'Firebase', icon: Icon(SimpleIcons.firebase)),
     Skills(skill: 'Python', icon: Icon(FontAwesomeIcons.python)),
     Skills(skill: 'RestApis', icon: Icon(SimpleIcons.swagger)),
     Skills(skill: 'Java', icon: Icon(FontAwesomeIcons.java)),
@@ -72,7 +73,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     final controller = Get.put(Controller());
     final linkController = Get.put(Links());
     return Scaffold(
